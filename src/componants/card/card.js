@@ -1,12 +1,12 @@
 import React from "react";
 import "./card.css";
+// import { addtodb } from "../Database/database";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Card = (props) => {
-    const { id, catagory, name, seller, price, img, ratings } = props.item;
-    
-    const addTocart = (props) => {
-        console.log(props)
-    } 
+  const { id, name, seller, price, img, ratings } = props.item;
+  const addTocart = props.addTocart;
 
   return (
     <div className="card">
@@ -20,7 +20,10 @@ const Card = (props) => {
         <p>rating: {ratings} </p>
       </div>
       <div className="btn-container">
-        <button className="btn" onClick={()=> addTocart(id)}>add To cart <span><i class="fa-solid fa-cart-plus"></i></span> </button>
+        <button className="btn" onClick={() => addTocart(id)}>
+          add to cart{" "}
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </button>
       </div>
     </div>
   );

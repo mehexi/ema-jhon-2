@@ -26,6 +26,7 @@
     border-radius: 0 0 20px 20px;
     border: none;
     background-color: #FFE0B3;
+    cursor: pointer;
 }
 .item-display{
     padding: 15px;
