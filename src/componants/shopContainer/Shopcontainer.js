@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./shopcontainer.css";
 import Card from "../card/card";
+import Cart from "../cart/Cart";
+import { addToDb } from "../../utilities/fakedb";
 
 const Shopcontainer = () => {
   const [items, setItems] = useState([]);
@@ -15,6 +17,7 @@ const Shopcontainer = () => {
   const addTocart = (props) => {
       const newCart = [...carts, props]
       setcart(newCart)
+      addToDb(props.id)
   };
 
   return (
@@ -26,14 +29,13 @@ const Shopcontainer = () => {
             <Card
               key={item.id}
               item={item}
-              addTocart={() => addTocart(item.id)}
+              addTocart={() => addTocart(item)}
             ></Card>
           ))}
         </div>
       </div>
       <div className="order-section">
-              <h1>orderSection</h1>
-              <p>selected items: {carts.length}</p>
+               <Cart cartItem={carts} sellectedItem={carts.length}></Cart>
       </div>
     </div>
   );

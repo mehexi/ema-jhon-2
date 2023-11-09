@@ -2,7 +2,7 @@ import React from "react";
 import "./card.css";
 // import { addtodb } from "../Database/database";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {  faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Card = (props) => {
   const { id, name, seller, price, img, ratings } = props.item;
